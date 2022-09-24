@@ -25,7 +25,7 @@ public class Cliente {
 		this.numeroRua = numeroRua;
 		this.complemento = complemento;
 		this.bairro = bairro;
-		this.cidade = cidade;  
+		this.cidade = cidade;   
 		this.estado = estado;
 		System.out.println("Cliente: " + nomeCompeto + " ID: " + id + " Status: (Cadastrado).");  
 	}
