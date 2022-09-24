@@ -18,7 +18,7 @@ public class Categoria {
                                        // Ele trás informações estaticas da classe e não de cada 
                                        // instância.        
     }
-    
+     
     
     public int getId() {
 		return id;
