@@ -34,7 +34,7 @@ public class Cliente {
 		return Cliente.qtdClientes;
 	}
 	
-	
+	 
 	//****** SETs e GETs  ****	
 	public int getId() {
 		return id;

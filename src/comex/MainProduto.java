@@ -33,7 +33,7 @@ public class MainProduto {
 						produto.calculaValorEstoque(produto.getPrecounitario());
 		            }
 		        }
-		    }
+		    } 
 		System.out.println("Categoria: " + 
     	    	produto.getId() + " -- " +
 		    	produto.getNome()+ " -- " +

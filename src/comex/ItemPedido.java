@@ -62,7 +62,7 @@ public class ItemPedido {
 	public int getQuantidadeNoPedido() {
 		return quantidadeNoPedido;
 	}
-
+ 
 	public String getNomeProduto() {
 		return nomeProduto;
 	}
