@@ -1,23 +1,21 @@
 package comex;
 
 public class MainCategoria {
-
-	public static void main(String[] args) {
-		Categoria categoria = new Categoria();
-		
-		for(int id = 1; id <= 3; id++) {
-		    if(id == 1) {
-		       categoria.setId(id);
+	public static void main(String[] args) {		
+		for(int qtd = 1; qtd <= 3; qtd++) {
+			Categoria categoria = new Categoria();
+		    if(qtd== 1) {
+		       categoria.setId(Categoria.getCategoria());
 			   categoria.setNome("INFORMÁTICA");
 			   categoria.setStatus("ATIVA");
 		    } else { 	
-		    	if(id == 2) { 
-		    	   categoria.setId(id);
+		    	if(qtd == 2) { 
+		    	   categoria.setId(Categoria.getCategoria());
 				   categoria.setNome("MÓVEIS");
 				   categoria.setStatus("INATIVA");
 		        } else {
-		    	    if(id == 3) { 
-			    	   categoria.setId(id);
+		    	    if(qtd == 3) { 
+		    	       categoria.setId(Categoria.getCategoria());
 					   categoria.setNome("LIVROS");
 					   categoria.setStatus("ATIVA");
 		            }
@@ -28,5 +26,4 @@ public class MainCategoria {
 										   categoria.getStatus().toLowerCase()+ ")");
 		}
 	}
-
 }

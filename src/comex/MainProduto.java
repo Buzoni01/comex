@@ -1,13 +1,12 @@
 package comex;
 
 public class MainProduto {
-
 	public static void main(String[] args) {
 		System.out.println("---------  ESTOQUE  ------------"); 
-		Produto produto = new Produto();
-		for(int id = 1; id < 4; id++) {
-		    if(id == 1) {
-		    	produto.setId(id);
+		for(int qtd = 1; qtd <= 3; qtd++) {
+			Produto produto = new Produto();
+		    if(qtd == 1) {
+		    	produto.setId(Produto.getProdutos());
 		    	produto.setNome("Notebook Samsung");
 			    produto.setDescricao("Core i5, ssd de 1 Tera.");
 			    produto.setPrecounitario(3523.0);
@@ -15,8 +14,8 @@ public class MainProduto {
 				produto.setCategoria("Informática");
 				produto.calculaValorEstoque(produto.getPrecounitario());
 		    } else { 	
-		    	if(id == 2) { 
-		    		produto.setId(id);
+		    	if(qtd == 2) { 
+		    		produto.setId(Produto.getProdutos());
 			    	produto.setNome("Clean Architecture");
 				    produto.setDescricao("1500 folhas");
 				    produto.setPrecounitario(102.9);
@@ -24,8 +23,8 @@ public class MainProduto {
 					produto.setCategoria("Livros");
 					produto.calculaValorEstoque(produto.getPrecounitario());
 		        } else {
-		    	    if(id == 3) { 
-		    	    	produto.setId(id);
+		    	    if(qtd == 3) { 
+		    	    	produto.setId(Produto.getProdutos());
 				    	produto.setNome("Monitor Dell 27");
 					    produto.setDescricao("Com HDMI");
 					    produto.setPrecounitario(1889.0);
@@ -35,7 +34,6 @@ public class MainProduto {
 		            }
 		        }
 		    }
-   
 		System.out.println("Categoria: " + 
     	    	produto.getId() + " -- " +
 		    	produto.getNome()+ " -- " +
@@ -44,9 +42,7 @@ public class MainProduto {
 			    produto.getQtdestoque()+ " -- " +
 				produto.getCategoria());
 		}
-		System.out.println(" ");
-		System.out.println("Valor Total em Estoque: " + produto.getSoma());
-		
+		System.out.println();
+		System.out.println("Valor Total em Estoque: " + Produto.getSoma());		
 	}
-
 }

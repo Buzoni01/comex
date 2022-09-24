@@ -7,14 +7,25 @@ public class ProdutoIsento {
     private double precounitario;
     private int qtdestoque;
 	private String categoria;
+
 	
-    private double soma;
-	public void calculaValorEstoque(double total) {
-		this.soma = this.soma + total;
+	private static int qtdProdutos;
+	public ProdutoIsento() {            
+		ProdutoIsento.qtdProdutos++;    
+    }                           
+	public static int getProdutos() {
+		return ProdutoIsento.qtdProdutos;
+    }
+
+	
+	private static double soma;
+	public void calculaValorEstoque(double valor) {
+		ProdutoIsento.soma = ProdutoIsento.soma + valor;
 	}
-	public double getSoma() {
+	public static double getSoma() {
 		return soma;
 	}
+
 
 	public double calculaImposto() {
 		if(this.id == 2) {
@@ -62,7 +73,5 @@ public class ProdutoIsento {
 		this.categoria = categoria;
 	}
 	// FIM SETs e GETs		
-	
-	
-	}
+}
 

@@ -4,7 +4,21 @@ public class Categoria {
     private int id;
 	private String nome;
     private String Status;
+    private static int qtdCategoria;  /* Quando crio uma Variável do tipo static, ela se torna uma 
+                                         variável da classe e não de cada instância, como as demais.
+                                         e ela é compartilhada entre as instâncias. */
 	
+    public Categoria() {            // Esse é o construtor, ele tem exatamente o mesmo nome que
+    	Categoria.qtdCategoria++;   // a classe e no caso utilizo para contar o número de  
+    }                               // categorias que serão criadas e guardar em qtdCategoria.
+                                    // Ele também é enxergado por todas as estância.
+    
+    public static int getCategoria() { // Observe que este método é static e então ele se torna um
+        return Categoria.qtdCategoria; // método da classe, assim como a variável qtdCategoria.
+                                       // Ele trás informações estaticas da classe e não de cada 
+                                       // instância.        
+    }
+    
     
     public int getId() {
 		return id;

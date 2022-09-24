@@ -7,6 +7,24 @@ public class Produto {
     private double precounitario;
     private int qtdestoque;
 	private String categoria;
+	private static int qtdProdutos;
+
+	public Produto() {            
+		Produto.qtdProdutos++;    
+}                           
+	public static int getProdutos() {
+		return Produto.qtdProdutos;
+}
+
+	
+	private static double soma;
+	public void calculaValorEstoque(double valor) {
+		Produto.soma = Produto.soma + valor;
+	}
+	public static double getSoma() {
+		return soma;
+	}
+
 	
 	public double calculaImposto() {
 		double imposto = this.precounitario * 40 / 100;
@@ -14,13 +32,6 @@ public class Produto {
 	}
 
 	
-    private double soma;
-	public void calculaValorEstoque(double total) {
-		this.soma = this.soma + total;
-	}
-	public double getSoma() {
-		return soma;
-	}
 	
 			
 	//****** SETs e GETs  ****

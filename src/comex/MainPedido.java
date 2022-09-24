@@ -3,11 +3,11 @@ package comex;
 public class MainPedido {
 	public static void main(String[] args) {
 
-		Pedido ped1 = new Pedido(01, "21-09-2022", "Gabi Ruta");
-		Pedido ped2 = new Pedido(02, "21-09-2022", "Eli Zangela");
-		Pedido ped3 = new Pedido(03, "21-09-2022", "Ana Maria");
-		Pedido ped4 = new Pedido(04, "22-09-2022", "Gabi Ruta");
-		Pedido ped5 = new Pedido(05, "22-09-2022", "Ana Maria");
+		Pedido ped1 = new Pedido(Pedido.getPedidos(), "21-09-2022", "Gabi Ruta");
+		Pedido ped2 = new Pedido(Pedido.getPedidos(), "21-09-2022", "Eli Zangela");
+		Pedido ped3 = new Pedido(Pedido.getPedidos(), "21-09-2022", "Ana Maria");
+		Pedido ped4 = new Pedido(Pedido.getPedidos(), "22-09-2022", "Gabi Ruta");
+		Pedido ped5 = new Pedido(Pedido.getPedidos(), "22-09-2022", "Ana Maria");
 
 		System.out.println("Pedido: " + ped1.getId() + ", Cliente: " + ped1.getCliente()
 				+ ", Data: " + ped1.getData() + ".");
@@ -19,6 +19,5 @@ public class MainPedido {
 				+ ", Data: " + ped4.getData() + ".");
 		System.out.println("Pedido: " + ped5.getId() + ", Cliente: " + ped5.getCliente()
 				+ ", Data: " + ped5.getData() + ".");
-
 	}
 }
