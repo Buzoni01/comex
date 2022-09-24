@@ -16,7 +16,7 @@ public class Pedido {
 		return Pedido.qtdPedidos;
 	}
 
-	 
+	  
 	//****** SETs e GETs  ****	
 	public int getId() {
 		return id;

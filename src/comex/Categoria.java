@@ -1,7 +1,7 @@
 package comex;
 
 public class Categoria { 
-    private int id;
+    private int id; 
 	private String nome;
     private String Status;
     private static int qtdCategoria;  /* Quando crio uma Variável do tipo static, ela se torna uma 
