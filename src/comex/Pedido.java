@@ -21,7 +21,7 @@ public class Pedido {
 	public int getId() {
 		return id;
 	}
-
+ 
 	public String getData() {
 		return data;
 	}

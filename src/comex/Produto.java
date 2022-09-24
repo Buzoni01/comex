@@ -5,7 +5,7 @@ public class Produto {
 	private String nome;
     private String descricao;
     private double precounitario;
-    private int qtdestoque;
+    private int qtdestoque; 
 	private String categoria;
 	private static int qtdProdutos;
 

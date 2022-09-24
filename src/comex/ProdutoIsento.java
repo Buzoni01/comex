@@ -74,4 +74,4 @@ public class ProdutoIsento {
 	}
 	// FIM SETs e GETs		
 }
-
+ 

@@ -2,7 +2,7 @@ package comex;
  
 public class MainPedido {
 	public static void main(String[] args) {
- 
+  
 		Pedido ped1 = new Pedido(Pedido.getPedidos(), "21-09-2022", "Gabi Ruta");
 		Pedido ped2 = new Pedido(Pedido.getPedidos(), "21-09-2022", "Eli Zangela");
 		Pedido ped3 = new Pedido(Pedido.getPedidos(), "21-09-2022", "Ana Maria");

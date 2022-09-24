@@ -33,7 +33,7 @@ public class Cliente {
 	public static int getClientes() {
 		return Cliente.qtdClientes;
 	}
-	
+	 
 	 
 	//****** SETs e GETs  ****	
 	public int getId() {

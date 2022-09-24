@@ -12,7 +12,7 @@ public class MainCategoria {
 		    	if(qtd == 2) { 
 		    	   categoria.setId(Categoria.getCategoria());
 				   categoria.setNome("MÓVEIS");
-				   categoria.setStatus("INATIVA"); 
+				   categoria.setStatus("INATIVA");  
 		        } else {
 		    	    if(qtd == 3) { 
 		    	       categoria.setId(Categoria.getCategoria());

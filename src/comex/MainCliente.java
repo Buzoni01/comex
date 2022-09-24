@@ -9,7 +9,7 @@ public class MainCliente {
 		"Santo André", "PR");
 		Cliente cli3 = new Cliente(Cliente.getClientes(), 777777777, "(11)947493333", "Gabi Ruta", "AV Siumare", "1815", "Apto.75",
 		"Pacaembu", "São Paulo", "SP");
-  
+   
 		System.out.println(" ");
 		System.out.println("Cliente ID: " + cli1.getId() + " | Nome: " + cli1.getNomeCompleto() + " | CPF: "
 				+ cli1.getCpf() + " | Celular: " + cli1.getNumeroCelular() + " | Estado: "
