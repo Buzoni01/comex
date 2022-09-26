@@ -2,7 +2,6 @@ package comex;
 
 public class ItemPedido {
 	private int id;
-//	private static int id2;
 	private double precoProdutoNoPedido;
 	private int quantidadeNoPedido;
 	private String nomeProduto;
