@@ -3,22 +3,40 @@ package comex;
 public class Categoria { 
     private int id; 
 	private String nome;
-    private String Status;
+    private StatusCategEnun Status;
     private static int qtdCategoria;  /* Quando crio uma Variável do tipo static, ela se torna uma 
                                          variável da classe e não de cada instância, como as demais.
                                          e ela é compartilhada entre as instâncias. */
 	
-    public Categoria() {            // Esse é o construtor, ele tem exatamente o mesmo nome que
-    	Categoria.qtdCategoria++;   // a classe e no caso utilizo para contar o número de  
-    }                               // categorias que serão criadas e guardar em qtdCategoria.
-                                    // Ele também é enxergado por todas as estância.
+//    public Categoria() {            // Esse é o construtor, ele tem exatamente o mesmo nome que
+//    	Categoria.qtdCategoria++;   // a classe e no caso utilizo para contar o número de  
+//    }                               // categorias que serão criadas e guardar em qtdCategoria.
+//                                    // Ele também é enxergado por todas as estância.
+
+    public Categoria(int id, String nome) {
+    	if (id <= 0){throw new IllegalArgumentException("Id não pode ser maior ou igual a zero.");}
+    	else this.id = id;
+    	
+    	if (nome.length() <=3 ){throw new IllegalArgumentException("Nome não pode ter menos que 3 caracteres.");}
+    	else this.nome = nome;
+    	
+    	this.Status = StatusCategEnun.ATIVO;
+    }
+    public Categoria(int id, String nome, StatusCategEnun status) {
+    	if (id <= 0){throw new IllegalArgumentException("Id não pode ser maior ou igual a zero.");}
+    	else this.id = id;
+    	
+    	if (nome.length() <=3 ){throw new IllegalArgumentException("Nome não pode ter menos que 3 caracteres.");}
+    	else this.nome = nome;  
+    	
+    	this.Status = status;    	
+    }
+    
     
     public static int getCategoria() { // Observe que este método é static e então ele se torna um
         return Categoria.qtdCategoria; // método da classe, assim como a variável qtdCategoria.
-                                       // Ele trás informações estaticas da classe e não de cada 
-                                       // instância.        
-    }
-      
+    }                                  // Ele trás informações estaticas da classe e não de cada 
+                                       // instância.
     
     public int getId() {
 		return id;
@@ -32,10 +50,10 @@ public class Categoria {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getStatus() {
+	public StatusCategEnun getStatus() {
 		return Status;
 	}
-	public void setStatus(String status) {
-		Status = status;
+	public void setStatus(StatusCategEnun status) {
+ 		this.Status = status;
 	}
 }
