@@ -16,7 +16,8 @@ public class Produto {
     	else this.id = id;
 
 		if (nome.length() <=5 ){throw new IllegalArgumentException("Nome não pode ter menos que 5 caracteres.");}
-    	else this.nome = nome;		
+		if (Character.isDigit(nome.charAt(0))){throw new IllegalArgumentException("0 1o. Digito do Nome não pode ser um número.");}
+		else this.nome = nome;		
 		
 		this.descricao = descricao;
 

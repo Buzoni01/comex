@@ -3,10 +3,10 @@ package br.com.comex.main;
 public class TestaCaracter {
     
 	public static void main(String[] args) {
-		String frase = "1";
+		String frase = "a";
 		char c = frase.charAt(0);
-		if (Character.isDigit(c)) {System.out.println(c + " é número");} 
-		if (Character.isLetter(c)){System.out.println(c + " é letra");}		
+		if (Character.isDigit(frase.charAt(0))) {System.out.println(c + " é número");} 
+		if (Character.isLetter(frase.charAt(0))){System.out.println(c + " é letra");}		
 	}
 }	
 //		for (int i = 0; i < frase.length(); i++) {

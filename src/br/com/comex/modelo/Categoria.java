@@ -13,8 +13,9 @@ public class Categoria {
     	else this.id = id;
     	
     	if (nome.length() <=3 ){throw new IllegalArgumentException("Nome não pode ter menos que 3 caracteres.");}
-    	else this.nome = nome;
-    	
+    	if (Character.isDigit(nome.charAt(0))){throw new IllegalArgumentException("0 1o. Digito do Nome não pode ser um número.");}    	
+    	else this.nome = nome;	
+  	    	
     	this.Status = StatusCategEnun.ATIVO;
     	Categoria.qtdCategoria++; 
     }
