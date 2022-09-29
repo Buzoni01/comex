@@ -6,12 +6,12 @@ public class MainCliente {
 
 	public static void main(String[] args) {
 //id = 0:
-		Cliente cli1 = new Cliente(1,"Ana Maria","99999999988","(11)947491111","AV Faria Lima","60","Sobrado",
-		"Pinheiros","Foz do Iguaçu","ES");
-		Cliente cli2 = new Cliente(2,"Eli Zangela","88888888877","(11)947492222","AV Francisco Morato","145","Casa",
-		"Centro","Santo André","PR");
+//		Cliente cli1 = new Cliente(1,"Ana Maria","99999999988","(11)947491111","AV Faria Lima","60","Sobrado",
+//		"Pinheiros","Foz do Iguaçu","ES");
+//		Cliente cli2 = new Cliente(2,"Eli Zangela","88888888877","(11)947492222","AV Francisco Morato","145","Casa",
+//		"Centro","Santo André","PR");
 //Testa id diferente de zero:
-		Cliente cli3 = new Cliente(0,"Gabi Ruta","77777777766","(11)947493333","AV Siumare","1815","Apto.75","Pacaembu","São Paulo","SP");
+		Cliente cli3 = new Cliente(1,"Gabi Ruta","77777777766","(11)947493333","AV Siumare","1815","Apto.75","Pacaembu","São Paulo","SP");
 //Testa nome maior que 5 caracteres:
 		//Cliente cli3 = new Cliente(3,"Gabi","77777777766","(11)947493333","AV Siumare","1815","Apto.75","Pacaembu","São Paulo","SP");
 //Testa cpf obrigatório, de 11 a 14 caracteres:
@@ -30,20 +30,24 @@ public class MainCliente {
 		//Cliente cli3 = new Cliente(3,"Gabi Ruta","77777777766","(11)947493333","AV Sumaré","1815","Apto.75","Pacaembu","São Palo","S");
 
 		System.out.println(" ");
-		System.out.println("Cliente ID: " + cli1.getId() + " | Nome: " + cli1.getNomeCompleto() + " | CPF: "
-				+ cli1.getCpf() + " | Celular: " + cli1.getNumeroCelular() + " | Estado: "
-				+ cli1.getEstado() + " | Cidade: " + cli1.getCidade() + " | Bairro: " + cli1.getBairro() + " | Rua: "
-				+ cli1.getRua() + " | Numero: " + cli1.getNumeroRua() + " | Complemento: "
-				+ cli1.getComplemento());
-		System.out.println("Cliente ID: " + cli2.getId() + " | Nome: " + cli2.getNomeCompleto() + " | CPF: "
-				+ cli2.getCpf() + " | Celular: " + cli2.getNumeroCelular() + " | Estado: "
-				+ cli2.getEstado() + " | Cidade: " + cli2.getCidade() + " | Bairro: " + cli2.getBairro() + " | Rua: "
-				+ cli2.getRua() + " | Numero: " + cli2.getNumeroRua() + " | Complemento: "
-				+ cli2.getComplemento());
+
+		
+//		System.out.println("Cliente ID: " + cli1.getId() + " | Nome: " + cli1.getNomeCompleto() + " | CPF: "
+//				+ cli1.getCpf() + " | Celular: " + cli1.getNumeroCelular() + " | Estado: "
+//				+ cli1.getEstado() + " | Cidade: " + cli1.getCidade() + " | Bairro: " + cli1.getBairro() + " | Rua: "
+//				+ cli1.getRua() + " | Numero: " + cli1.getNumeroRua() + " | Complemento: "
+//				+ cli1.getComplemento());
+//		System.out.println("Cliente ID: " + cli2.getId() + " | Nome: " + cli2.getNomeCompleto() + " | CPF: "
+//				+ cli2.getCpf() + " | Celular: " + cli2.getNumeroCelular() + " | Estado: "
+//				+ cli2.getEstado() + " | Cidade: " + cli2.getCidade() + " | Bairro: " + cli2.getBairro() + " | Rua: "
+//				+ cli2.getRua() + " | Numero: " + cli2.getNumeroRua() + " | Complemento: "
+//				+ cli2.getComplemento());
 		System.out.println("Cliente ID: " + cli3.getId() + " | Nome: " + cli3.getNomeCompleto() + " | CPF: "
 				+ cli3.getCpf() + " | Celular: " + cli3.getNumeroCelular() + " | Estado: "
 				+ cli3.getEstado() + " | Cidade: " + cli3.getCidade() + " | Bairro: " + cli3.getBairro() + " | Rua: "
 				+ cli3.getRua() + " | Numero: " + cli3.getNumeroRua() + " | Complemento: "
 				+ cli3.getComplemento());
+		
+//		System.out.println(cli3.toString());
 	}
 }
