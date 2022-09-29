@@ -53,7 +53,17 @@ public class Cliente {
 	public static int getClientes() {
 		return Cliente.qtdClientes;
 	}
-	 
+
+	@Override
+	public String toString() {
+		return "Cliente ID: " + getId()        + " | Nome: "        + getNomeCompleto()  +
+			   " | CPF: "     + getCpf()       + " | Celular: "     + getNumeroCelular() +
+			   " | Estado: "  + getEstado()    + " | Cidade: "      + getCidade()        +
+			   " | Bairro: "  + getBairro()    + " | Rua: " 	    + getRua()           +
+			   " | Numero: "  + getNumeroRua() + " | Complemento: " + getComplemento();		
+	}	
+		
+		
 	 
 	//****** SETs e GETs  ****	
 	public int getId() {

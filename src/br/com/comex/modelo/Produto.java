@@ -51,6 +51,14 @@ public class Produto {
 		return imposto;
 	}
 
+	@Override
+	public String toString() {
+		return "Categoria: " +getId()           +" -- "        +getNome()          +" -- " +getDescricao()+
+			   " -- (Preço: "+getPrecounitario()+" | Imposto: "+(calculaImposto()) +") -- "+getQtdestoque()+
+			   " -- "        +getCategoria();
+	}	
+
+	
 	
 	//****** SETs e GETs  ****
 	public int getId() {

@@ -48,6 +48,15 @@ public class ItemPedido {
 		return totalComDesconto;
 	}
 
+	@Override
+	public String toString() {
+		return getNomeProduto()        +" |            "+
+			   precoTotalSemDesconto() +" |    "+
+			   calculaDesconto(0)      +" |              "+
+			   precoTotalComDesconto(0)+" |";
+		
+	}	
+	
 	
 	//****** SETs e GETs  ****	
 	public int getId() {

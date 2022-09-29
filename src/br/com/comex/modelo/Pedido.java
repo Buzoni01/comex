@@ -16,6 +16,14 @@ public class Pedido {
 		return Pedido.qtdPedidos;
 	}
 
+	@Override
+	public String toString() {
+		return "Pedido: "    + getId()     + 
+			   ", Cliente: " + getCliente()+ 
+			   ", Data: "    + getData()   + ".";
+	}	
+	
+	
 	  
 	//****** SETs e GETs  ****	
 	public int getId() {

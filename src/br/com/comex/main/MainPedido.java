@@ -10,16 +10,12 @@ public class MainPedido {
 		Pedido ped3 = new Pedido(Pedido.getPedidos(), "21-09-2022", "Ana Maria");
 		Pedido ped4 = new Pedido(Pedido.getPedidos(), "22-09-2022", "Gabi Ruta");
 		Pedido ped5 = new Pedido(Pedido.getPedidos(), "22-09-2022", "Ana Maria");
-
-		System.out.println("Pedido: " + ped1.getId() + ", Cliente: " + ped1.getCliente()
-				+ ", Data: " + ped1.getData() + ".");
-		System.out.println("Pedido: " + ped2.getId() + ", Cliente: " + ped2.getCliente()
-				+ ", Data: " + ped2.getData() + ".");
-		System.out.println("Pedido: " + ped3.getId() + ", Cliente: " + ped3.getCliente()
-				+ ", Data: " + ped3.getData() + ".");
-		System.out.println("Pedido: " + ped4.getId() + ", Cliente: " + ped4.getCliente()
-				+ ", Data: " + ped4.getData() + ".");
-		System.out.println("Pedido: " + ped5.getId() + ", Cliente: " + ped5.getCliente()
-				+ ", Data: " + ped5.getData() + ".");
+		System.out.println(ped1.toString());
+		System.out.println(ped2.toString());
+		System.out.println(ped3.toString());
+		System.out.println(ped4.toString());
+		System.out.println(ped5.toString());
+		
+		
 	}
 }

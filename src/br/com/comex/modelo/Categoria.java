@@ -34,6 +34,13 @@ public class Categoria {
     }                                  // Ele trás informações estaticas da classe e não de cada 
                                        // instância.
     
+	@Override
+	public String toString() {
+		return "Categoria: " + getNome()  + " ("  + 
+                 			   getId()    + " - " +
+                 			   getStatus()+ ")";
+	}	
+	
     public int getId() {
 		return id;
 	}
