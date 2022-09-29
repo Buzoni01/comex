@@ -1,4 +1,7 @@
-package comex;
+package br.com.comex.main;
+
+import br.com.comex.modelo.ItemPedido;
+import br.com.comex.modelo.TipoDesconto;
 
 public class MainIntemPedido {
 

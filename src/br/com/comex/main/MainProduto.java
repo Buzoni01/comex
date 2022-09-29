@@ -1,4 +1,7 @@
-package comex;
+package br.com.comex.main;
+
+import br.com.comex.modelo.Produto;
+import br.com.comex.modelo.ProdutoIsento;
 
 public class MainProduto {
 	public static void main(String[] args) {

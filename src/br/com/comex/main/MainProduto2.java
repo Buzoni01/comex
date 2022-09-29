@@ -1,4 +1,7 @@
-package comex;
+package br.com.comex.main;
+
+import br.com.comex.modelo.Produto;
+import br.com.comex.modelo.ProdutoIsento;
 
 public class MainProduto2 {
 	public static void main(String[] args) { 
@@ -11,7 +14,7 @@ public class MainProduto2 {
 		    	produto.setNome("Notebook Samsung");
 			    produto.setDescricao("Core i5, ssd de 1 Tera.");
 			    produto.setPrecounitario(3523.0);
-			    produto.setQtdestoque(1);
+			    produto.setQtdestoque(3);
 				produto.setCategoria("Informática");
 				produto.calculaValorEstoque(produto.getPrecounitario());
 		    } else { 	

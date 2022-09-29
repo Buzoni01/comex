@@ -1,5 +1,7 @@
-package comex;
- 
+package br.com.comex.main;
+
+import br.com.comex.modelo.Pedido;
+
 public class MainPedido {
 	public static void main(String[] args) {
   

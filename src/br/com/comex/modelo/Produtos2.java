@@ -1,4 +1,4 @@
-package comex;
+package br.com.comex.modelo;
 
 public class Produtos2 {	
 	public static void main(String[] args) {
