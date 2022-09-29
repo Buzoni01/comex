@@ -2,6 +2,10 @@ package comex;
 
 public class MainCategoria {
 	public static void main(String[] args) {
+		/**
+		 * Para testar as consistências exigidas pelo exercício, basta trocar
+		 * os valores nas Categorias criadas abaixo:
+		 */
 		Categoria cat1 = new Categoria(1,"INFORMÁTICA");
 		Categoria cat2 = new Categoria(2,"MÓVEIS",StatusCategEnun.INATIVO);		
 		Categoria cat3 = new Categoria(3,"LIVROS",StatusCategEnun.ATIVO);

@@ -8,11 +8,6 @@ public class Categoria {
                                          variável da classe e não de cada instância, como as demais.
                                          e ela é compartilhada entre as instâncias. */
 	
-//    public Categoria() {            // Esse é o construtor, ele tem exatamente o mesmo nome que
-//    	Categoria.qtdCategoria++;   // a classe e no caso utilizo para contar o número de  
-//    }                               // categorias que serão criadas e guardar em qtdCategoria.
-//                                    // Ele também é enxergado por todas as estância.
-
     public Categoria(int id, String nome) {
     	if (id <= 0){throw new IllegalArgumentException("Id não pode ser maior ou igual a zero.");}
     	else this.id = id;
@@ -21,6 +16,7 @@ public class Categoria {
     	else this.nome = nome;
     	
     	this.Status = StatusCategEnun.ATIVO;
+    	Categoria.qtdCategoria++; 
     }
     public Categoria(int id, String nome, StatusCategEnun status) {
     	if (id <= 0){throw new IllegalArgumentException("Id não pode ser maior ou igual a zero.");}
