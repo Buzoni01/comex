@@ -1,18 +1,24 @@
 package comex;
 
-public class ProdutoIsento {
-	private int id;
-	private String nome;
-    private String descricao;
-    private double precounitario;
-    private int qtdestoque;
-	private String categoria;
+public class ProdutoIsento extends Produto {
+	public ProdutoIsento(int id, String nome, String descricao, double precounitario, int qtdestoque,
+			String categoria) {
+		super(id, nome, descricao, precounitario, qtdestoque, categoria);
+	}
+
+	public double calculaImposto() {
+		return 0;		
+	}
+}
 
 	
+	
+/*	CÓDIGO ANTIGO:
+	
+//	public ProdutoIsento() {            
+//		ProdutoIsento.qtdProdutos++;    
+//   }                           
 	private static int qtdProdutos;
-	public ProdutoIsento() {            
-		ProdutoIsento.qtdProdutos++;    
-    }                           
 	public static int getProdutos() {
 		return ProdutoIsento.qtdProdutos;
     }
@@ -27,14 +33,7 @@ public class ProdutoIsento {
 	}
 
 
-	public double calculaImposto() {
-		if(this.id == 2) {
-			double imposto = this.precounitario * 40 / 100;
-			return imposto;
-		}else {return 0;		
-		 }
-	}
-	
+		
 	//****** SETs e GETs  ****
 	public int getId() {
 		return id;
@@ -74,4 +73,4 @@ public class ProdutoIsento {
 	}
 	// FIM SETs e GETs		
 }
- 
+ */
