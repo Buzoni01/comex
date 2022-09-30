@@ -4,7 +4,7 @@ Projeto Semana 7 - Java -- BRX-Alura
 
 ##   Descrição Geral do Projeto:
 
-> Fazer os Exercícios propostos no Trello, após assistir os cursos online.<br>
+> Fazer os Exercícios propóstos no Trello, após assistir os cursos online.<br>
 
 - `Cursos:`<br>
 * Java Exceções: aprenda a criar, lançar e controlar exceções,<br> 
