@@ -1,7 +1,7 @@
 package br.com.comex.main;
 
 import br.com.comex.modelo.Categoria;
-import br.com.comex.modelo.StatusCategEnun;
+import br.com.comex.modelo.EnumCategStatus;
 
 public class MainCategoria {
 	public static void main(String[] args) {
@@ -12,8 +12,8 @@ public class MainCategoria {
 		 * os valores nas Categorias criadas abaixo:
 		 */
 		Categoria cat1 = new Categoria(1,"INFORMÁTICA");
-		Categoria cat2 = new Categoria(2,"MÓVEIS",StatusCategEnun.INATIVO);		
-		Categoria cat3 = new Categoria(3,"LIVROS",StatusCategEnun.ATIVO);
+		Categoria cat2 = new Categoria(2,"MÓVEIS",EnumCategStatus.INATIVA);		
+		Categoria cat3 = new Categoria(3,"LIVROS",EnumCategStatus.ATIVA);
 		
 		System.out.println(cat1.toString());
 		System.out.println(cat2.toString());

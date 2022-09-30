@@ -1,6 +1,5 @@
 package br.com.comex.modelo;
 
-public enum TipoDesconto {
+public enum EnumTipoDesconto {
 	QUANTIDADE,PROMOCAO,NENHUM; 
-
-}  
+}

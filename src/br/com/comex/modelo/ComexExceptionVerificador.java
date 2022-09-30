@@ -3,7 +3,7 @@ package br.com.comex.modelo;
 public class ComexExceptionVerificador {
 	private int id;
 	private String nome;
-	private StatusCateg status;
+	private EnumCategStatus status;
 
 	public ComexExceptionVerificador(int id, String nome) {
 		if (id <= 0){throw new ComexException("ID deve ser maior que zero.");}
@@ -11,10 +11,10 @@ public class ComexExceptionVerificador {
 		
 		if (nome.length() <= 3){throw new ComexException("Nome deve ter mas que três digitos.");}
 		else{this.nome = nome;}
-		this.status = StatusCateg.ATIVO;
+		this.status = EnumCategStatus.ATIVA;
 	}
 
-	public ComexExceptionVerificador(int id, String nome, StatusCateg status) {
+	public ComexExceptionVerificador(int id, String nome, EnumCategStatus status) {
 		if (id <= 0){throw new ComexException("ID deve ser maior que zero.");}
 		else{this.id = id;}
 		
@@ -41,7 +41,7 @@ public class ComexExceptionVerificador {
 		this.nome = nome;
 	}
 
-	public StatusCateg getStatus() {
+	public EnumCategStatus getStatus() {
 		return status;
 	}
 

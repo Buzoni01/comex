@@ -10,23 +10,40 @@ public class Cliente {
 	private String complemento;
 	private String bairro;
 	private String cidade;
-	private String estado;
+	private EnumEstado estado;
 	private static int qtdClientes = 1;
 	
 	public Cliente(int id, String nomecompleto, String cpf, String numerocelular, String rua, String numerorua,
-			String complemento, String bairro, String cidade, String estado) {
+			String complemento, String bairro, String cidade, EnumEstado estado) {
 
 		if (id <= 0){throw new IllegalArgumentException("Id não pode ser menor ou igual a zero.");}
     	else this.id = id;
 		
 		if (nomecompleto.length() <=5 ){throw new IllegalArgumentException("Nome não pode ter menos que 6 caracteres.");}
-    	else this.nomeCompleto = nomecompleto;		
+		if (Character.isDigit(nomecompleto.charAt(0))){throw new IllegalArgumentException("0 1o. Digito do Nome não pode ser um número.");}
+		this.nomeCompleto = nomecompleto;		
 		
-		if (cpf.length() < 11 | cpf.length() > 14){throw new IllegalArgumentException("Cpf tem que conter de 11 a 14 digitos.");}
-    	else this.cpf = cpf;
+		if (!cpf.matches("[0-9]{11}")){throw new IllegalArgumentException("Cpf tem que conter 11 digitos.");}
+    	else {
+			String cpf1 = cpf.substring(0,3);
+			String cpf2 = cpf.substring(3,6);
+			String cpf3 = cpf.substring(6,9);
+			String cpf4 = cpf.substring(9,11);
 			
-		if (numerocelular.length() != 0 && (numerocelular.length() < 11 | numerocelular.length() > 16)){throw new IllegalArgumentException("Celular tem que conter de 11 a 16 digitos.");}
-    	else this.numeroCelular = numerocelular;
+			cpf = cpf1+"."+cpf2+"."+cpf3+"-"+cpf4;
+    		this.cpf = cpf;
+		}
+		
+		if (!numerocelular.matches("[0-9]{11}")){throw new IllegalArgumentException("Celular tem que ser digitado dessa forma: (00) 0 0000-0000.");}
+		else {
+			String tel1 = numerocelular.substring(0,2);
+			String tel2 = numerocelular.substring(2,3);
+			String tel3 = numerocelular.substring(3,7);
+			String tel4 = numerocelular.substring(7,11);
+			
+			numerocelular = "("+tel1+") "+tel2+" "+tel3+"-"+tel4; 
+			this.numeroCelular = numerocelular;
+		}    	
 
 		if (rua.length() <=5 ){throw new IllegalArgumentException("Rua não pode ter menos que 6 caracteres.");}
     	else this.rua = rua;
@@ -42,8 +59,7 @@ public class Cliente {
 		if (cidade.length() <=1 ){throw new IllegalArgumentException("Cidade não pode ter menos que 2 caracteres.");}
     	else this.cidade = cidade;
 
-		if (estado.length() != 2 ){throw new IllegalArgumentException("Estado deve ter exatamente 2 digitos.");}
-    	else this.estado = estado;
+		this.estado = estado;
 				
 		Cliente.qtdClientes++;
 		System.out.println("Cliente: " + this.nomeCompleto + " ID: " + id + " Status: (Cadastrado).");  
@@ -58,13 +74,13 @@ public class Cliente {
 	public String toString() {
 		return "Cliente ID: " + getId()        + " | Nome: "        + getNomeCompleto()  +
 			   " | CPF: "     + getCpf()       + " | Celular: "     + getNumeroCelular() +
-			   " | Estado: "  + getEstado()    + " | Cidade: "      + getCidade()        +
-			   " | Bairro: "  + getBairro()    + " | Rua: " 	    + getRua()           +
-			   " | Numero: "  + getNumeroRua() + " | Complemento: " + getComplemento();		
-	}	
+			   " | Rua: " 	  + getRua()       + " | Numero: "      + getNumeroRua()     +
+			   " | Complemento: " + getComplemento() + " | Bairro: "      + getBairro()  +
+			   " | Cidade: "      + getCidade()+ " | Estado: "  + getEstado();		
+	}
+
 		
-		
-	 
+		 
 	//****** SETs e GETs  ****	
 	public int getId() {
 		return id;
@@ -102,7 +118,7 @@ public class Cliente {
 		return cidade;
 	}
 
-	public String getEstado() {
+	public EnumEstado getEstado() {
 		return estado;
 	}
 
