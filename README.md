@@ -10,6 +10,7 @@ Projeto Semana 7 - Java -- BRX-Alura
 * Java Exceções: aprenda a criar, lançar e controlar exceções,<br> 
 * Java e java.lang: programe com a classe Object e String.<br>
 <br>
+
 - `Exercícios:`<br>
 * Setup inicial,<br> 
 * Validações ao criar uma Categoria,<br>
