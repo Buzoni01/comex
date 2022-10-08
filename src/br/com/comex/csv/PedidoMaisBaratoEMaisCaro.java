@@ -3,6 +3,7 @@ package br.com.comex.csv;
 import java.io.FileNotFoundException;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Locale;
 
 public class PedidoMaisBaratoEMaisCaro {
 
@@ -12,10 +13,20 @@ public class PedidoMaisBaratoEMaisCaro {
 		
 		ComparadorDePedidos porValor = new ComparadorDePedidos();
 		leArquivoCsv.sort(porValor);
-		System.out.println("Pedido Mais Barato: "+leArquivoCsv.get(0));
-		System.out.println("Pedido Mais Caro  : "+leArquivoCsv.get(leArquivoCsv.size()-1));
+		
+		double preco = Double.parseDouble(leArquivoCsv.get(0).getPreco());
+		double quantidade = Double.parseDouble(leArquivoCsv.get(0).getQuantidade());
+		
+		System.out.println("Pedido Mais Barato: "+ (preco * quantidade) +" ("+leArquivoCsv.get(0).getProduto()+")");
+		System.out.format(new Locale("pt","BR"),"%s R$ %,5.2f %s %s %s %n","Pedido Mais Barato:",(preco * quantidade),"(",leArquivoCsv.get(0).getProduto(),")");;
+		System.out.println();
+		
+		preco = Double.parseDouble(leArquivoCsv.get(leArquivoCsv.size()-1).getPreco());
+		quantidade = Double.parseDouble(leArquivoCsv.get(leArquivoCsv.size()-1).getQuantidade());
+		
+		System.out.println("Pedido Mais Caro  : "+ (preco * quantidade) +" ("+leArquivoCsv.get(leArquivoCsv.size()-1).getProduto()+")");
+		System.out.format(new Locale("pt","BR"),"%s R$ %,5.2f %s %s %s %n","Pedido Mais Barato:",(preco * quantidade),"(",leArquivoCsv.get(leArquivoCsv.size()-1).getProduto(),")");;	
 	}
-
 }
 
 class ComparadorDePedidos implements Comparator<PedidoCsv> {
