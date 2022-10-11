@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import br.com.comex.modelo.ConnectionFactory;
-
+ 
 public class MainListagemCategoria {
 
 	public static void main(String[] args) throws SQLException {

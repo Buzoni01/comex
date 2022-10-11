@@ -9,3 +9,4 @@ public class ConnectionFactory {
 		return DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "brx");
 	}
 }
+ 

@@ -12,7 +12,7 @@ public class MainInsercaoCategoria {
 	public static void main(String[] args) throws SQLException {
 		ConnectionFactory criaConexao = new ConnectionFactory();
 		Connection conexao = criaConexao.recuperarConexao();
-		
+		 
 		Statement stm = conexao.createStatement();
 		stm.execute("INSERT INTO COMEX.categoria (nome, status) VALUES ('INFORMATICA', 'ATIVA')");
 		stm.execute("INSERT INTO COMEX.categoria (nome, status) VALUES ('MOVEIS', 'INATIVA')");
