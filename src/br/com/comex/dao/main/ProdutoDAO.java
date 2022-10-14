@@ -22,7 +22,7 @@ public class ProdutoDAO {
 		try(PreparedStatement stm = conexao.prepareStatement(sql,v_id)){						
 			stm.setString(1, produto.getNome());
 			stm.setString(2, produto.getDescricao());
-			stm.setFloat(3, produto.getPrecoUnitario());
+			stm.setFloat(3, produto.getPrecounitario());
 			stm.setInt(4, produto.getqtdEstoq());
 			stm.setInt(5, produto.getCategoId());
 			stm.setString(6, produto.getTipo());
