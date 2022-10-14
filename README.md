@@ -1,21 +1,26 @@
 # comex
-Projeto Semana 8 - Java -- BRX-Alura
-<h1 align="center"> JAVA: Treinamento & Mentoria: Alexandre Aquiles</h1>
+Projeto Semana 9 - Java -- BRX-Alura
+<h1 align="center"> JAVA: Treinamento & Mentoria: Cácio Costa</h1>
 
 ##   Descrição Geral do Projeto:
 
 > Fazer os Exercícios propóstos no Trello, após assistir os cursos online.<br>
 
 - `Cursos:`<br>
-* Java.util: Coleções, Wrappers e Lambda expressions.<br> 
-* Java.io: Streams, Reader e Writers.<br>
+* Java e JDBC: trabalhando com um banco de dados.<br> 
+* Design Patterns em Java I: boas práticas de programação.<br>
 <br>
 
 - `Exercícios:`<br>
-* Lendo o arquivo pedidos.csv,<br> 
-* Calculando o total de produtos vendidos do pedidos.csv,<br>
-* Calculando total de categorias distintas do pedidos.csv,<br>
-* Montante total de vendas do pedidos.csv,<br>
-* Pedidos mais barato e mais caro do pedidos.csv,<br>
-* Formatação de moedas,<br>
-* Transformando PedidoCsv em um Pedido,<br>
+* Carregando o Schema do Comex no seu Oracle,<br> 
+* Inserção de Categorias,<br>
+* Listagem de Categorias,<br>
+* Atualização de Categorias,<br>
+* Remoção de Categorias Inativas,<br>
+* CRUD de Produtos,<br>
+* CRUD de Clientes,<br>
+* CRUD de Pedidos e Itens de Pedido,<br>
+* DAOs para as entidades,<br>
+* Pool de conexões,<br>
+* Gerenciamento de Transações com Command,<br>
+* Leituras de formatos CSV e JSON com Strategy.<br>
