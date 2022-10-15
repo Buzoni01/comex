@@ -10,7 +10,6 @@ public class TotalProdutosVendidos {
 
 		int totalProdutosVendidos = 0;
 		for(int i=0; i<listaArquivoCsv.size(); i++) {
-			listaArquivoCsv.get(i);
 			totalProdutosVendidos = totalProdutosVendidos + Integer.parseInt(listaArquivoCsv.get(i).getQuantidade());
 		}
 		System.out.println("Total de produtos vendidos: " + totalProdutosVendidos);
