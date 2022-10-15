@@ -7,14 +7,16 @@ public class Produto {
 	private String nome;
     private String descricao;
 //    private double precounitario;
-    private BigDecimal precounitario;
+//    private BigDecimal precounitario;
+    private int precounitario;
     private int qtdestoque; 
-	private Categoria categoria;
- 	private Tipo tipo;
+	private int categoria;
+//	private Categoria categoria;    
+ 	private EnumTipoIsento tipo;
 	private static int qtdProdutos;
 	
-	public Produto(String nome, String descricao, BigDecimal precounitario,
-		       int qtdestoque, Categoria categoria, Tipo tipo) {            
+	public Produto(String nome, String descricao, int precounitario,
+		       int qtdestoque, int categoria, EnumTipoIsento tipo) {            
 
 //	if (id <= 0){throw new IllegalArgumentException("Id não pode ser menor ou igual a zero.");}
 //	else this.id = id;
@@ -25,8 +27,8 @@ public class Produto {
 	
 	this.descricao = descricao;
 
-//	if (precounitario <= 0){throw new IllegalArgumentException("Preço Unitário não pode ser menor ou igual a zero.");}
-	if (precounitario.doubleValue() <= 0){throw new IllegalArgumentException("Preço Unitário não pode ser menor ou igual a zero.");}
+	if (precounitario <= 0){throw new IllegalArgumentException("Preço Unitário não pode ser menor ou igual a zero.");}
+//	if (d.doubleValue() <= 0){throw new IllegalArgumentException("Preço Unitário não pode ser menor ou igual a zero.");}
 	else this.precounitario = precounitario;		
 	
 	if (qtdestoque <= 0){throw new IllegalArgumentException("Quantidade em Estoque não pode ser menor ou igual a zero.");}
@@ -46,7 +48,7 @@ public class Produto {
 	
 	
 	
-	public Produto(int id, String nome, String descricao, BigDecimal precounitario,
+	public Produto(int id, String nome, String descricao, int precounitario,
 			       int qtdestoque,String categoria) {            
 
 		if (id <= 0){throw new IllegalArgumentException("Id não pode ser menor ou igual a zero.");}
@@ -58,15 +60,17 @@ public class Produto {
 		
 		this.descricao = descricao;
 
-		if (precounitario.doubleValue() <= 0){throw new IllegalArgumentException("Preço Unitário não pode ser menor ou igual a zero.");}
-    	else this.precounitario = precounitario;		
+//		if (precounitario.doubleValue() <= 0){throw new IllegalArgumentException("Preço Unitário não pode ser menor ou igual a zero.");}
+		if (precounitario <= 0){throw new IllegalArgumentException("Preço Unitário não pode ser menor ou igual a zero.");}
+
+		else this.precounitario = precounitario;		
 		
 		if (qtdestoque <= 0){throw new IllegalArgumentException("Quantidade em Estoque não pode ser menor ou igual a zero.");}
     	else this.qtdestoque = qtdestoque;
 
 //		if (categoria.length() <=0 ){throw new IllegalArgumentException("Categoria não pode ficar vazio.");}
 //    	else this.categoria = categoria;
-		this.tipo = Tipo.NAO_ISENTO;
+		this.tipo = EnumTipoIsento.NAO_ISENTO;
 		
 		Produto.qtdProdutos++; 
 	}                           
@@ -83,21 +87,37 @@ public class Produto {
 	public static double getSoma() {
 		return soma;
 	}
-
 	
-//	public double calculaImposto() {
-//		double imposto = this.precounitario * 40 / 100;
-//		return imposto;
-//	}
-	public BigDecimal calculaImposto() {
-	    if (this.tipo == Tipo.NAO_ISENTO){
-		   BigDecimal imposto = this.precounitario.multiply(new BigDecimal(0.4));
-		   return imposto;
-		} 
-		else{
-		    return new BigDecimal(0);
-		}    
+//	public BigDecimal calcula () {
+//		
+//		    if (this.tipo == EnumTipoIsento.NAO_ISENTO)
+//		    {
+//			   BigDecimal imposto = this.precounitario.multiply(new BigDecimal(0.4));
+//			   return imposto;
+//			}else
+//				return new BigDecimal(0);		
+//		}
+	
+	
+	public double calculaImposto() {
+		double imposto = this.precounitario * 40 / 100;
+		return imposto;
 	}
+	
+	
+//	public BigDecimal calculaImposto() {
+//		if (this.tipo == Tipo.NAO_ISENTO)
+//
+//		{
+//			BigDecimal imposto = this.precoUnitario.multiply(new BigDecimal(0.4));
+//			return imposto;
+//		} else
+//
+//		{
+//			return new BigDecimal(0);
+//		}
+//	}
+	
 	
 
 	@Override
@@ -130,12 +150,14 @@ public class Produto {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public BigDecimal getPrecounitario() {
+	public int getPrecounitario() {
 		return precounitario;
 	}
-	public void setPrecounitario(BigDecimal precounitario) {
-		if (precounitario.doubleValue() <= 0){throw new IllegalArgumentException("Preço Unitário não pode ser menor ou igual a zero.");}
-    	else this.precounitario = precounitario;
+	public void setPrecounitario(int precounitario) {
+//		if (precounitario.doubleValue() <= 0){throw new IllegalArgumentException("Preço Unitário não pode ser menor ou igual a zero.");}
+		if (precounitario  <= 0){throw new IllegalArgumentException("Preço Unitário não pode ser menor ou igual a zero.");}
+
+		else this.precounitario = precounitario;
 	}
 	public int getQtdestoque() {
 		return qtdestoque;
@@ -144,13 +166,23 @@ public class Produto {
 		if (qtdestoque <= 0){throw new IllegalArgumentException("Quantidade em Estoque não pode ser menor ou igual a zero.");}
     	else this.qtdestoque = qtdestoque;
 	}
-	public Categoria getCategoria() {
+	public int getCategoria() {
 		return categoria;
 	}
-	public void setCategoria(Categoria categoria) {
+	public void setCategoria(int categoria) {
 //    	if (categoria.length() <=0 ){throw new IllegalArgumentException("Categoria não pode ficar vazio.");}
 //    	else this.categoria = categoria;
 		this.categoria = categoria;
 	}
+	public EnumTipoIsento getTipo() {
+		return tipo;
+	}
 	// FIM SETs e GETs    
+
+
+
+
+
+
+	
 }

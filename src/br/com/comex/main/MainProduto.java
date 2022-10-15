@@ -5,14 +5,16 @@ import java.sql.SQLException;
 
 import br.com.comex.dao.main.ProdutoDAO;
 import br.com.comex.modelo.ConnectionFactory;
+import br.com.comex.modelo.EnumTipoIsento;
 //import br.com.comex.modelo.CrudProduto;
 import br.com.comex.modelo.Produto;
-import br.com.comex.modelo.ProdutoIsento;
 
 public class MainProduto {
 	public static void main(String[] args) throws SQLException {
 		System.out.println("---------  ESTOQUE  ------------"); 	
-		Produto produto  = new ProdutoIsento(1, "Notebook Samsung", "Core i5, ssd de 1 Tera.", 3523.0, 360, "Informática");
+//		Produto produto  = new ProdutoIsento("Notebook Samsung", "Core i5, ssd de 1 Tera.", 3523.0, 360, "INFORMATICA",EnumTipoIsento.ISENTO);
+		Produto produto  = new Produto("Notebook Samsung", "Core i5, ssd de 1 Tera.", 3523, 1, 360, EnumTipoIsento.NAO_ISENTO);
+
 //		Conta novaConta = new Conta(345L, "3321-9", "Dani", new BigDecimal("1500"));
 
 //		Connection conexao = new ConnectionFactory().getConnection();
@@ -29,9 +31,9 @@ public class MainProduto {
 		}
 		System.out.println(produto);
 	}
+
+
 }
-
-
 
 
 

@@ -11,7 +11,7 @@ import br.com.comex.modelo.CrudProduto;
 public class MainCrudInsereProduto {
 	public static void main(String[] args) throws SQLException {
 //		String[] v_id = {"id"};
-		CrudProduto vproduto = new CrudProduto("Comoda", "Comoda Vertical", 1099, 1, 361, "NAO_ISENTO");
+		CrudProduto vproduto = new CrudProduto("Comoda", "Comoda Vertical", 1099, 1, 3, "NAO_ISENTO");
 		
 		try(Connection conexao = new ConnectionFactory().recuperarConexao()){
             ProdutoDAO produtoDAO = new ProdutoDAO(conexao);

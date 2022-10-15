@@ -16,16 +16,17 @@ public class ProdutoDAO {
 	public ProdutoDAO(Connection conexao) {
 		this.conexao = conexao;		
 	}
-	public void Inserir(Produto produto) {
+	public void Inserir(Produto produto) throws SQLException {
 		String[] v_id = {"id"};
 		String sql = "INSERT INTO comex.PRODUTO (NOME, DESCRICAO, PRECO_UNITARIO, QUANTIDADE_ESTOQUE, CATEGORIA_ID, TIPO) VALUES (?, ?, ?, ?, ?, ?)";
 		try(PreparedStatement stm = conexao.prepareStatement(sql,v_id)){						
 			stm.setString(1, produto.getNome());
 			stm.setString(2, produto.getDescricao());
-			stm.setFloat(3, produto.getPrecounitario());
-			stm.setInt(4, produto.getqtdEstoq());
-			stm.setInt(5, produto.getCategoId());
-			stm.setString(6, produto.getTipo());
+//			stm.setBigDecimal(3, produto.getPrecounitario());
+			stm.setInt(3, produto.getPrecounitario());
+			stm.setInt(4, produto.getQtdestoque());
+			stm.setInt(5, produto.getCategoria());
+			stm.setString(6, produto.getTipo().name());
 			
 			stm.execute();
 			try(ResultSet rst = stm.getGeneratedKeys()){
