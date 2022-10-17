@@ -6,13 +6,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import br.com.comex.modelo.Categoria;
 import br.com.comex.modelo.ConnectionFactory;
+import br.com.comex.modelo.EnumCategStatus;
 
 public class MainInsercaoCategoria {
-
 	public static void main(String[] args) throws SQLException {
 		String[] v_Id = { "id" };
 		Categoria cat1 = new Categoria("INFORMATICA");
-		Categoria cat2 = new Categoria("MOVEIS", "INATIVA");
+		Categoria cat2 = new Categoria("MOVEIS",EnumCategStatus.INATIVA);
 		Categoria cat3 = new Categoria("LIVROS");
 		
 		ConnectionFactory criaConexao = new ConnectionFactory();				
@@ -25,12 +25,11 @@ public class MainInsercaoCategoria {
 		   }			   
 	    }
 	}
-			
-	private static void adicionaCategoria(String nome, String status, PreparedStatement stm) throws SQLException {
+	
+	private static void adicionaCategoria(String nome, EnumCategStatus status, PreparedStatement stm) throws SQLException {		
 		stm.setString(1, nome);
-		stm.setString(2, status);	
+		stm.setString(2, status.name());	
 		stm.execute();
-
 		try (ResultSet rst = stm.getGeneratedKeys()) {
 			while (rst.next()) {
 				System.out.println("ID criado: " + rst.getInt(1));

@@ -3,7 +3,7 @@ package br.com.comex.modelo;
 public class Categoria { 
     private int id; 
 	private String nome;
-    private String Status;
+    private EnumCategStatus Status;
     private static int qtdCategoria;  /* Quando crio uma Variável do tipo static, ela se torna uma 
                                          variável da classe e não de cada instância, como as demais.
                                          e ela é compartilhada entre as instâncias. */
@@ -14,17 +14,17 @@ public class Categoria {
     	if (Character.isDigit(nome.charAt(0))){throw new IllegalArgumentException("0 1o. Digito do Nome não pode ser um número.");}    	
     	else this.nome = nome;	
     	
-    	this.Status = "ATIVA";
+    	this.Status = EnumCategStatus.ATIVA;
     	Categoria.qtdCategoria++; 
     }
-    public Categoria(String nome, String status) {
+    
+    public Categoria(String nome, EnumCategStatus status) {
     	if (nome.length() <=3 ){throw new IllegalArgumentException("Nome não pode ter menos que 3 caracteres.");}
     	else this.nome = nome;  
     	
     	this.Status = status;    	
     }
-    
-    
+        
     public static int getCategoria() { // Observe que este método é static e então ele se torna um
         return Categoria.qtdCategoria; // método da classe, assim como a variável qtdCategoria.
     }                                  // Ele trás informações estaticas da classe e não de cada 
@@ -49,10 +49,10 @@ public class Categoria {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getStatus() {
+	public EnumCategStatus getStatus() {
 		return Status;
 	}
-	public void setStatus(String status) {
+	public void setStatus(EnumCategStatus status) {
  		this.Status = status;
 	}
 }

@@ -1,6 +1,6 @@
 package br.com.comex.modelo;
 
-public class CrudProduto {
+public class TesteDeCrudeDAOemProduto {
 
 	private Integer id; //ID	NUMBER(38,0)
 	private String nome; // NOME	VARCHAR2(255 BYTE)
@@ -10,7 +10,7 @@ public class CrudProduto {
 	private Integer categoId; //CATEGORIA_ID	NUMBER(38,0)
 	private String tipo; //TIPO	VARCHAR2(10 BYTE)
 
-	public CrudProduto(String nome, String descricao, Integer precoUnitario, Integer qtdEstoq, 
+	public TesteDeCrudeDAOemProduto(String nome, String descricao, Integer precoUnitario, Integer qtdEstoq, 
 			           Integer categoId, String tipo) {
 		super();
 		this.nome = nome;
@@ -20,7 +20,7 @@ public class CrudProduto {
 		this.categoId = categoId;
 		this.tipo = tipo;
 	}
-	public CrudProduto(Integer id, String nome, String descricao, Integer precoUnitario, Integer qtdEstoq, 
+	public TesteDeCrudeDAOemProduto(Integer id, String nome, String descricao, Integer precoUnitario, Integer qtdEstoq, 
 					   Integer categoId , String tipo) {
 		this.id = id;
 		this.nome = nome;

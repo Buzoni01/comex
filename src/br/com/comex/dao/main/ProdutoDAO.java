@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.comex.modelo.CrudProduto;
+import br.com.comex.modelo.TesteDeCrudeDAOemProduto;
 import br.com.comex.modelo.Produto;
 
 public class ProdutoDAO {
@@ -22,8 +22,8 @@ public class ProdutoDAO {
 		try(PreparedStatement stm = conexao.prepareStatement(sql,v_id)){						
 			stm.setString(1, produto.getNome());
 			stm.setString(2, produto.getDescricao());
-//			stm.setBigDecimal(3, produto.getPrecounitario());
-			stm.setInt(3, produto.getPrecounitario());
+			stm.setBigDecimal(3, produto.getPrecounitario());
+//			stm.setInt(3, produto.getPrecounitario());
 			stm.setInt(4, produto.getQtdestoque());
 			stm.setInt(5, produto.getCategoria());
 			stm.setString(6, produto.getTipo().name());
@@ -58,8 +58,8 @@ public class ProdutoDAO {
 //			}				
 //		}	
 //	}
-	public List<CrudProduto> listar() throws SQLException{
-		List<CrudProduto> produtos = new ArrayList<CrudProduto>();
+	public List<TesteDeCrudeDAOemProduto> listar() throws SQLException{
+		List<TesteDeCrudeDAOemProduto> produtos = new ArrayList<TesteDeCrudeDAOemProduto>();
 		String[] v_id = {"id"};
 		String sql = "SELECT * FROM COMEX.produto";
 		try(PreparedStatement stm = conexao.prepareStatement(sql, v_id)){
@@ -67,8 +67,8 @@ public class ProdutoDAO {
 			try(ResultSet rst = stm.getGeneratedKeys()){
 //			try(ResultSet rst = stm.getResultSet()){		
 				while(rst.next()) {
-					CrudProduto produto = 
-							    new CrudProduto(rst.getInt("ID"), rst.getString("NOME"), 
+					TesteDeCrudeDAOemProduto produto = 
+							    new TesteDeCrudeDAOemProduto(rst.getInt("ID"), rst.getString("NOME"), 
 							    	rst.getString("DESCRICAO"), rst.getInt("PRECO_UNITARIO"), 
 							    	rst.getInt("QUANTIDADE_ESTOQUE"), rst.getInt("CATEGORIA_ID"), 
 							    	rst.getString("TIPO"));
@@ -78,6 +78,4 @@ public class ProdutoDAO {
 		}
 		return produtos;
 	}
-
-
 }
