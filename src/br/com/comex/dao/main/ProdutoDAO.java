@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.comex.modelo.TesteDeCrudeDAOemProduto;
 import br.com.comex.modelo.Produto;
+import br.com.comex.modelo.TesteDeCrudeDAOemProduto;
 
 public class ProdutoDAO {
 	private Connection conexao;

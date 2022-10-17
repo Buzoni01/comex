@@ -12,7 +12,8 @@ public class Cliente {
 	private String cidade;
 	private EnumEstado estado;
 	private static int qtdClientes = 1;
-	
+		
+	/* 1o. Construtor: */
 	public Cliente(int id, String nomecompleto, String cpf, String numerocelular, String rua, String numerorua,
 			String complemento, String bairro, String cidade, EnumEstado estado) {
 
@@ -62,7 +63,7 @@ public class Cliente {
 		this.estado = estado;
 				
 		Cliente.qtdClientes++;
-		System.out.println("Cliente: " + this.nomeCompleto + " ID: " + id + " Status: (Cadastrado).");  
+		System.out.println("Cliente: " + this.nomeCompleto/* + " ID: " + this.id + " Status: (Cadastrado)."*/);  
 	}
  
 	
