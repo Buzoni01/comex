@@ -1,5 +1,8 @@
 package br.com.comex.modelo;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Categoria { 
     private int id; 
 	private String nome;
@@ -7,6 +10,10 @@ public class Categoria {
     private static int qtdCategoria;  /* Quando crio uma Variável do tipo static, ela se torna uma 
                                          variável da classe e não de cada instância, como as demais.
                                          e ela é compartilhada entre as instâncias. */
+    
+    public Categoria() {
+    	super();
+    }
 	
     public Categoria(String nome) {
   	

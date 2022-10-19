@@ -13,10 +13,10 @@ public class MainAlteraCliente {
 
 	public static void main(String[] args) throws SQLException {
 		String[] v_Id = { "id" };
-		Cliente cliente = new Cliente (1,"Gabi Ruta da Silva e Melo","77777777766","11947493333","AV Siumare","1815","Apto.75",
+		Cliente cliente = new Cliente (1,"Gabi Ruta da Silva e Melo2","77777777766","11947493333","AV Siumare","1815","Apto.75",
 				                       "Pacaembu","São Paulo",EnumEstado.SP);	
-		cliente.setId(28);
 		
+		// Vou mudar a ConnectionFactory para um pacote JDBC e subo para o Git mais tarde, Obrigado Cácio.
 		ConnectionFactory criaConexao = new ConnectionFactory();
 		try(Connection conexao = criaConexao.recuperarConexao()){
 			String sql = "UPDATE comex.CLIENTE SET NOME=?, CPF=?, TELEFONE=?, RUA=?, NUMERO=?, COMPLEMENTO=?, BAIRRO=?, "
