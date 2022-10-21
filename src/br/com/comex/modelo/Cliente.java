@@ -1,5 +1,8 @@
 package br.com.comex.modelo;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Cliente {
 	private int id;
 	private String nomeCompleto;
@@ -11,15 +14,18 @@ public class Cliente {
 	private String bairro;
 	private String cidade;
 	private EnumEstado estado;
+	private String uf;
 	private static int qtdClientes = 1;
+
+	
+	public Cliente(){
+		super();
+	}
 		
 	/* 1o. Construtor: */
 	public Cliente(int id, String nomecompleto, String cpf, String numerocelular, String rua, String numerorua,
 			String complemento, String bairro, String cidade, EnumEstado estado) {
 
-		if (id <= 0){throw new IllegalArgumentException("Id não pode ser menor ou igual a zero.");}
-    	else this.id = id;
-		
 		if (nomecompleto.length() <=5 ){throw new IllegalArgumentException("Nome não pode ter menos que 6 caracteres.");}
 		if (Character.isDigit(nomecompleto.charAt(0))){throw new IllegalArgumentException("0 1o. Digito do Nome não pode ser um número.");}
 		this.nomeCompleto = nomecompleto;		
@@ -64,6 +70,32 @@ public class Cliente {
 				
 		Cliente.qtdClientes++;
 		System.out.println("Cliente: " + this.nomeCompleto/* + " ID: " + this.id + " Status: (Cadastrado)."*/);  
+	}
+ 
+	public Cliente(String nomecompleto, String cpf, String numerocelular, String rua, String numerorua,
+			String complemento, String bairro, String cidade, String uf) {
+    		this.cpf = cpf;
+
+			this.numeroCelular = numerocelular;   	
+
+		if (rua.length() <=5 ){throw new IllegalArgumentException("Rua não pode ter menos que 6 caracteres.");}
+    	else this.rua = rua;
+		
+		if (numerorua.length() <=1 ){throw new IllegalArgumentException("Rua não pode ter menos que 2 caracteres.");}
+    	else this.numeroRua = numerorua;
+		
+		this.complemento = complemento;
+		
+		if (bairro.length() <=1 ){throw new IllegalArgumentException("Bairro não pode ter menos que 2 caracteres.");}
+    	else this.bairro = bairro;
+		
+		if (cidade.length() <=1 ){throw new IllegalArgumentException("Cidade não pode ter menos que 2 caracteres.");}
+    	else this.cidade = cidade;
+
+		this.uf= uf;
+				
+		Cliente.qtdClientes++;
+		System.out.println("Cliente: " + this.nomeCompleto);  
 	}
  
 	
@@ -126,5 +158,51 @@ public class Cliente {
 	public void setId(int id) {
 		this.id = id;
 	}
+
+
+	public void setNomeCompleto(String nomeCompleto) {
+		this.nomeCompleto = nomeCompleto;
+	}
+
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+
+	public void setNumeroCelular(String numeroCelular) {
+		this.numeroCelular = numeroCelular;
+	}
+
+
+	public void setRua(String rua) {
+		this.rua = rua;
+	}
+
+
+	public void setNumeroRua(String numeroRua) {
+		this.numeroRua = numeroRua;
+	}
+
+
+	public void setComplemento(String complemento) {
+		this.complemento = complemento;
+	}
+
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+
+	public void setEstado(EnumEstado estado) {
+		this.estado = estado;
+	}
+	
 	// FIM SETs e GETs	
 }

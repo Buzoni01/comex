@@ -13,7 +13,7 @@ public class MainAtualizacaoCategoria {
 		Connection conexao = criaConexao.recuperarConexao();
 		
 		Statement stm = conexao.createStatement();
-		stm.execute("UPDATE COMEX.categoria SET NOME ='LIVROS TÉCNICOS' WHERE nome = 'LIVROS'");
+		stm.execute("UPDATE COMEX.categoria SET NOME ='LIVROS DE 007' WHERE nome = '007'");
 		
 		Integer linhasModificadas = stm.getUpdateCount();
 		System.out.println("Numero de registros alterados: "+linhasModificadas);

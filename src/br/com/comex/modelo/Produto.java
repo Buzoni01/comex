@@ -2,6 +2,9 @@ package br.com.comex.modelo;
 
 import java.math.BigDecimal;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Produto {
 	private int id;
 	private String nome;
@@ -12,7 +15,9 @@ public class Produto {
  	private EnumTipoIsento tipo;
 	private static int qtdProdutos;
 	
- 	
+	public Produto(){
+		super();
+	}
 	public Produto(String nome, String descricao, BigDecimal precounitario, int qtdestoque, int categoria,  EnumTipoIsento tipo) {
         super();
 		if (nome.length() <=5 ){throw new IllegalArgumentException("Nome não pode ter menos que 5 caracteres.");}
@@ -26,9 +31,7 @@ public class Produto {
     	
     	if (qtdestoque <= 0){throw new IllegalArgumentException("Quantidade em Estoque não pode ser menor ou igual a zero.");}
     	else this.qtdestoque = qtdestoque;   	
- 
-//    	if (categoria.length() <=0 ){throw new IllegalArgumentException("Categoria não pode ficar vazio.");}
-//     	if (categoria == null) {throw new IllegalArgumentException("É obrigatório inserir a categoria");}    	
+     	
     	if (categoria <= 0 ){throw new IllegalArgumentException("Categoria não pode ficar vazio.");}
     	else this.categoria = categoria;
 
@@ -37,6 +40,14 @@ public class Produto {
 	}
 	
 	
+	
+	public Produto(String nome, String descricao, BigDecimal precounitario, int qtdestoque, int categoria) {
+		this.nome = nome;
+		this.descricao = descricao;
+		this.precounitario = precounitario;
+		this.qtdestoque = qtdestoque;
+		this.categoria = categoria;
+	}
 	
 	//****** SETs e GETs  **********
 	public int getId() {
@@ -96,22 +107,20 @@ public class Produto {
 	public int getCategoria() {
 		return categoria;
 	}
-//	public Categoria getCategoria() {
-//		return categoria;
-//	}
-//	public void setCategoria(Categoria categoria) {
-//		if (categoria.length() <=0 ){throw new IllegalArgumentException("Categoria não pode ficar vazio.");}
-//		else this.categoria = categoria;
-//	}
 	public void setCategoria(int categoria) {
 		this.categoria = categoria;
 	}/*******************************/
 	
 	
 	
+	
 	/*******************************/
 	public EnumTipoIsento getTipo() {
 		return tipo;
+	}	
+	public void setTipo(EnumTipoIsento tipo) {
+		this.tipo = tipo;
+
 	}/******************************/
 	
 	

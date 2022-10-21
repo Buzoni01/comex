@@ -7,75 +7,43 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.comex.modelo.EnumTipoIsento;
 import br.com.comex.modelo.Produto;
-import br.com.comex.modelo.TesteDeCrudeDAOemProduto;
 
 public class ProdutoDAO {
 	private Connection conexao;
-	
-	public ProdutoDAO(Connection conexao) {
-		this.conexao = conexao;		
-	}
-	public void Inserir(Produto produto) throws SQLException {
-		String[] v_id = {"id"};
-		String sql = "INSERT INTO comex.PRODUTO (NOME, DESCRICAO, PRECO_UNITARIO, QUANTIDADE_ESTOQUE, CATEGORIA_ID, TIPO) VALUES (?, ?, ?, ?, ?, ?)";
-		try(PreparedStatement stm = conexao.prepareStatement(sql,v_id)){						
-			stm.setString(1, produto.getNome());
-			stm.setString(2, produto.getDescricao());
-			stm.setBigDecimal(3, produto.getPrecounitario());
-//			stm.setInt(3, produto.getPrecounitario());
-			stm.setInt(4, produto.getQtdestoque());
-			stm.setInt(5, produto.getCategoria());
-			stm.setString(6, produto.getTipo().name());
-			
-			stm.execute();
-			try(ResultSet rst = stm.getGeneratedKeys()){
-				while(rst.next()) {
-					produto.setId(rst.getInt(1));
-				}
 
-			}				
-		}			
-	}	
-//	public void Inserir(CrudProduto produto) throws SQLException {
-//		String[] v_id = {"id"};
-//		String sql = "INSERT INTO comex.PRODUTO (NOME, DESCRICAO, PRECO_UNITARIO, QUANTIDADE_ESTOQUE, CATEGORIA_ID, TIPO) VALUES (?, ?, ?, ?, ?, ?)";
-//		
-//		try(PreparedStatement stm = conexao.prepareStatement(sql,v_id)){						
-//			stm.setString(1, produto.getNome());
-//			stm.setString(2, produto.getDescricao());
-//			stm.setFloat(3, produto.getPrecoUnitario());
-//			stm.setInt(4, produto.getqtdEstoq());
-//			stm.setInt(5, produto.getCategoId());
-//			stm.setString(6, produto.getTipo());
-//			
-//			stm.execute();
-//			try(ResultSet rst = stm.getGeneratedKeys()){
-//				while(rst.next()) {
-//					produto.setId(rst.getInt(1));
-//				}
-//
-//			}				
-//		}	
-//	}
-	public List<TesteDeCrudeDAOemProduto> listar() throws SQLException{
-		List<TesteDeCrudeDAOemProduto> produtos = new ArrayList<TesteDeCrudeDAOemProduto>();
-		String[] v_id = {"id"};
-		String sql = "SELECT * FROM COMEX.produto";
-		try(PreparedStatement stm = conexao.prepareStatement(sql, v_id)){
+	public ProdutoDAO(Connection conexao) {
+		this.conexao = conexao;
+	}
+
+	public List<Produto> listarProdutos() throws SQLException {
+		List<Produto> produtos = new ArrayList<Produto>();
+		String sql = "SELECT * FROM comex.produto";
+		try (PreparedStatement stm = conexao.prepareStatement(sql)) {
 			stm.execute();
-			try(ResultSet rst = stm.getGeneratedKeys()){
-//			try(ResultSet rst = stm.getResultSet()){		
-				while(rst.next()) {
-					TesteDeCrudeDAOemProduto produto = 
-							    new TesteDeCrudeDAOemProduto(rst.getInt("ID"), rst.getString("NOME"), 
-							    	rst.getString("DESCRICAO"), rst.getInt("PRECO_UNITARIO"), 
-							    	rst.getInt("QUANTIDADE_ESTOQUE"), rst.getInt("CATEGORIA_ID"), 
-							    	rst.getString("TIPO"));
-					produtos.add(produto);
+			try (ResultSet rst = stm.getResultSet()) {
+				while (rst.next()) {
+					produtos.add(this.criaProdutos(rst));
 				}
-			}	
+			}
 		}
 		return produtos;
+	}
+	private Produto criaProdutos(ResultSet registro) throws SQLException {
+	Produto produto = new Produto(registro.getString("nome"), registro.getString("descricao"),
+								  registro.getBigDecimal("preco_unitario"), registro.getInt("quantidade_estoque"), 
+								  registro.getInt("categoria_id"));
+
+	produto.setId(registro.getInt("id"));
+	produto.setNome(registro.getString("nome"));
+	produto.setDescricao(registro.getString("descricao"));
+	produto.setPrecounitario(registro.getBigDecimal("preco_unitario"));
+	produto.setQtdestoque(registro.getInt("quantidade_estoque"));
+	produto.setCategoria(registro.getInt("categoria_id"));
+	EnumTipoIsento tipo = EnumTipoIsento.valueOf(registro.getString("tipo"));
+	produto.setTipo(tipo);
+
+	return produto;
 	}
 }
