@@ -13,3 +13,4 @@ public class MainComexWS {
 		Endpoint.publish(url, servico);
 	}
 }
+
