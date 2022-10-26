@@ -1,6 +1,12 @@
 package br.com.comex.modelo;
 
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+/* Abaixo a linha coloca nessa ordem a entrada e exibição dos dados la no SoapUI
+@XmlType(propOrder = {"Id","Cpf","nomeCompleto","numeroCelular","rua","numeroRua","complemento","bairro",
+					  "cidade","estado","uf"})
+*/					  
 
 @XmlRootElement
 public class Cliente {
