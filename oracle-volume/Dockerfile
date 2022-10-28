@@ -1,7 +1,4 @@
-#FROM node:14 
-FROM gvenzl/oracle-xe:18
-#WORKDIR /app-node
-WORKDIR d:/comex/oracle-volume
-#COPY . .
-#RUN npm install
-#ENTRYPOINT npm start
+FROM openjdk:8u342-jdk
+EXPOSE 8080
+COPY comex.jar: .
+ENTRYPOINT java -jar comex.jar
